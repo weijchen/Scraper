@@ -3,8 +3,8 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/result', function(req, res) {
-
-    url = 'http://finance.yahoo.com/q?s=aapl';
+    console.log(req.query.stockNumber);
+    var url = 'http://finance.yahoo.com/q?s=' + req.query.stockNumber;
 
     request(url, function(error, response, html) {
         if (!error) {
@@ -36,5 +36,3 @@ router.get('/result', function(req, res) {
 
     });
 });
-
-module.exports = router;

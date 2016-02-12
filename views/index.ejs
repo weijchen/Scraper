@@ -1,23 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
 	<title>Stock Scraper</title>
 	<link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 </head>
 <body>
 	<header>
 		
 	</header>
 	<main>
-		<form method='GET' action='/result'>
+		<!-- <form method='GET' action='/result'> -->
 			<div class="form-group" style="font-size: 16px">
 				<label>Stock code</label>
-				<input class="form-control" type="text" placeholder="Enter" name="code">
-				<button id='submit' class="btn btn-danger btn-sm col-sm-offset-6" type="submit"><span class="fa fa-lock"></span> Submit</button>
+				<input class="form-control" type="text" placeholder="Enter" ng-model="stock">
+				<button id='submit' class="btn btn-danger btn-sm col-sm-offset-6" type="submit" ng-click='createStock'>Submit</button>
 			</div>
-		</form>
+			<p>The Stock you pick is {{stock || 'appl'}}</p>
+		<!-- </form> -->
+		<div>
+			<table border="1">
+				<tr>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+			</table>
+		</div>
 	</main>
 	<footer>
 		
