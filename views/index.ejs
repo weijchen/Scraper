@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app='ngScraper'>
 <head>
 	<title>Stock Scraper</title>
 	<link rel='stylesheet' href='/stylesheets/style.css' />
@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 </head>
-<body>
+<body ng-controller='scraperCtrl'>
 	<header>
 		
 	</header>
@@ -17,24 +17,9 @@
 			<div class="form-group" style="font-size: 16px">
 				<label>Stock code</label>
 				<input class="form-control" type="text" placeholder="Enter" ng-model="stock">
-				<button id='submit' class="btn btn-danger btn-sm col-sm-offset-6" type="submit" ng-click='createStock'>Submit</button>
+				<button id='submit' class="btn btn-danger btn-sm col-sm-offset-6" type="submit" ng-click='createStock()'>Submit</button>
+				<p>The Stock you pick is {{stock || 'appl'}}</p>
 			</div>
-			<p>The Stock you pick is {{stock || 'appl'}}</p>
-		<!-- </form> -->
-		<div>
-			<table border="1">
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-				<tr>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-				</tr>
-			</table>
-		</div>
 	</main>
 	<footer>
 		
